@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background: rgb(6, 6, 51);
+}
+main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.wrapper{
+    width: 450px;
+    background: rgb(255, 255, 255);
+    margin: 0.25rem;
+    padding: 1rem;
+    box-shadow: 0 8px 8px 0 #5f27e0;
+    border-radius: 1rem;
+}
+.wrapper h1{
+    padding: 0 2rem 0 2rem;
+}
+.answer{
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description{
+    font-size: 20px;
+    animation-name: move-down;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.input-field{
+    animation-name: move-up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    
+}
+#text-input{
+    border: none;
+    border-bottom: 3px solid purple;
+    text-align: center;
+    height: 2rem;
+    width: 16rem;
+}
+#submit{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 20px;
+    background: rgb(100, 35, 138);
+    color: white;
+    border: none;
+}
+#submit:hover{
+    cursor: pointer;
+}
+.fa-lightbulb{
+    color: rgb(148, 148, 56);
+    font-size: 20px;
+}
+.delete-button{
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    left: 90%;
+    background: none;
+    border: none;
+}
+.delete-button:hover{
+    cursor: pointer;
+}
+@keyframes move-up{
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,-50px);
+    }
+}
+@keyframes move-down{
+    from{
+        transform: translate(0,0);
+    }
+    to{
+        transform: translate(0,50px);
+    }
+}
+@keyframes reset-up {
+    from{ 
+        transform: translate(0,50px);
+    }
+    to{ 
+        transform: translate(0,0);
+    }
+}
+
+@keyframes reset-down {
+    from{ 
+        transform: translate(0,-50px); 
+    }
+    to{
+        transform: translate(0,0);
+    }
+}
+@media(max-width: 500px){
+    main{
+        flex-direction: column;
+    }
+    .wrapper{
+        width: auto;
+        height: auto;
+    }
+    #submit{
+        margin-top: 1rem;
+    }
+    .answer{
+        width: 350px;
+        top: 22.5rem;
+    }
+    .delete-button{
+        left: 85%;
+    }
+}
