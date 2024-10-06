@@ -1,0 +1,1 @@
+A simple palindrome checker
